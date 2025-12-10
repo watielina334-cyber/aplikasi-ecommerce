@@ -4,10 +4,6 @@ session_start();
 // ambil parameter "page" dari url;
 $page = $_GET['page'] ?? 'home';
 
-
-
-
-
 switch ($page) {
 
     // user pages

@@ -1,6 +1,6 @@
 <?php
 
-$products = [
+$product_data = [
     [
         'id' => 1,
         'nama' => 'Serum Vitamin C',

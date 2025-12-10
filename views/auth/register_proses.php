@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../config/database.php";
+require_once "../../config/database.php";
 
 // ambil data dari form
 $name =trim($_POST['name']);
@@ -12,7 +12,7 @@ $password2 =trim($_POST['password2']);
 // validasi input kosong
 if (empty($name) || empty($email) || empty($password) || empty($password2)){
     $_SESSION['ERROR'] = "password tidak sama!";
-    header("location: ../index.php?page=register");
+    header("location: " . $baseURL . "index.php?page=home.php");
     exit;
 }
 
@@ -23,9 +23,10 @@ if ($password !== $password2) {
 }
 
 // cek apakah email sudah terdaftar
-$stmt = $koneksi ->prepare("select id from users where email = ?");
+$stmt = $conn ->prepare("select id from users where email = ?");
 $stmt -> bind_param("s", $email);
-$stmt = $stmt -> get_result();
+$stmt->execute();
+$stmt->bind_result($id, $name, $email);
 
 if ($result -> num_rows > 0){
     $_SESSION['error'] = "Email sudah digunakan!";

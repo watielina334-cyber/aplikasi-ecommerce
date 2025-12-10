@@ -1,3 +1,8 @@
+<?php
+$baseURL = "http://localhost/Glad2Glow/public/";
+require_once '../data/product_data.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +13,10 @@
 <body>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
-        <?php foreach ($product as $p): ?>
+        <?php foreach ($product_data as $p): ?>
 
         <div class="bg-white p-4 rounded-lg shadow">
-            <img src="<?= $baseURL ?>public/images/<?= $p['gambar'] ?>" class="w-full h-48 object-cover rounded">
+            <img src="../public/images/<?= $p['gambar'] ?>" class="w-full h-48 object-cover rounded">
 
             <h3 class="mt-3 font-semibold text-gray-800"><?= $p['nama'] ?></h3>
             <p class="text-pink-600 font-bold">Rp <?= number_format($p['harga'],0,',','.') ?></p>

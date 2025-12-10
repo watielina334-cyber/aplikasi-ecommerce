@@ -1,34 +1,41 @@
-<?php 
+<?php
 session_start();
-require_once '../../config/database.php';
+include 'config/database.php'; // koneksi database
 
-// Ambil input
-$email = $_POST['email'] ?? '';
-$password = $_POST['password'] ?? '';
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-if ($email == '' || $password == '') {
-    echo "<script>alert('Email & Password harus diisi'); window.history.back();</script>";
-    exit;
-}
+$query = $conn->prepare("SELECT * FROM users WHERE username = ?");
+$query->bind_param("s", $username);
+$query->execute();
+$result = $query->get_result();
 
-// Query ambil user berdasarkan email
-$q = $koneksi->query("SELECT * FROM users WHERE email='$email'");
-$user = $q->fetch_assoc();
+if ($result->num_rows === 1) {
+    $users = $result->fetch_assoc();
 
-// kalau user ketemu
-if ($user) {
+    // Cocokkan password
+    if (password_verify($password, $users['password'])) {
 
-    // cek password hash
-    if (password_verify($password, $user['password'])) {
-        $_SESSION['users'] = $user;
-        header("Location: ../../index.php");
-        exit;
+        // Simpan data ke session
+        $_SESSION['users'] = [
+            'id'       => $users['id'],
+            'username' => $users['username'],
+            'role'     => $users['role']
+        ];
+
+        // Redirect berdasarkan role
+        if ($users['role'] === 'admin') {
+            header("Location: ../views/user/home.php");
+            exit;
+        } else {
+            header("Location: user/user_dashboard.php");
+            exit;
+        }
+
     } else {
-        echo "<script>alert('Password SALAH!'); window.history.back();</script>";
-        exit;
+        echo "<script>alert('Password salah!'); window.history.back();</script>";
     }
-
 } else {
-    echo "<script>alert('Email TIDAK ditemukan!'); window.history.back();</script>";
-    exit;
+    echo "<script>alert('Username tidak ditemukan!'); window.history.back();</script>";
 }
+?>

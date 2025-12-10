@@ -1,8 +1,18 @@
 <?php
 session_start();
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header('Location: ../../index.php?page=login');
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
     exit;
 }
 ?>
-<?php include '../../middleware/auth_admin.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+</head>
+<body>
+<h2>Selamat datang, <?php echo $_SESSION['user']; ?>!</h2>
+<p><a href="logout.php">Logout</a></p>
+</body>
+</html>

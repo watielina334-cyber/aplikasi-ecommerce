@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mari Login</title>
 </head>
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="<?= $baseURL ?>page="" method="POST">
+        <form action="http://localhost/Glad2Glow/views/auth/login_proses.php" method="POST">
             <input type="text" name="email" placeholder="Username atau Email" required>
             <input type="password" name="password" placeholder="Kata Sandi" required>
             <button type="submit">Login</button>
         </form>
 
         <p>Belum Punya Akun?
-            <a href="<?= $baseURL ?>views/auth/register_proses.php">Daftar Sekarang</a>
+            <a href="http://localhost/Glad2Glow/views/auth/register.php">Daftar Sekarang</a>
         </p>
     </div>
     <style>

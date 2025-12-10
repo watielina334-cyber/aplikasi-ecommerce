@@ -1,19 +1,34 @@
 <?php 
 session_start();
-include '../config/database.php';
+require_once '../../config/database.php';
 
-$email = $_POST;
-$password = $_POST;
+// Ambil input
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
 
-// contoh query cek user
-$q = $conn->query("SELECT * FROM users WHERE email='$email");
-$user= $q->fetch_assoc();
-
-if ($users && password_verify($password, $users['password'])) {
-    $_SESSION['users'] = $user;
-    header('location: '. $baseURL . 'index.php');
+if ($email == '' || $password == '') {
+    echo "<script>alert('Email & Password harus diisi'); window.history.back();</script>";
     exit;
-} else {
-    echo "email dan password anda salah🙏";
 }
-?>
+
+// Query ambil user berdasarkan email
+$q = $koneksi->query("SELECT * FROM users WHERE email='$email'");
+$user = $q->fetch_assoc();
+
+// kalau user ketemu
+if ($user) {
+
+    // cek password hash
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['users'] = $user;
+        header("Location: ../../index.php");
+        exit;
+    } else {
+        echo "<script>alert('Password SALAH!'); window.history.back();</script>";
+        exit;
+    }
+
+} else {
+    echo "<script>alert('Email TIDAK ditemukan!'); window.history.back();</script>";
+    exit;
+}

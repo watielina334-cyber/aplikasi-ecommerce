@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?= $products['name'] ?></title>
+    <title>Product Group</title>
 </head>
 <body>
 

@@ -182,99 +182,73 @@ $baseURL = "http://localhost/Glad2Glow/public/";
 
     <!-- FOOTER DELINA BEAUTY -->
     <footer class="bg-pink-100 text-gray-700 mt-12 py-10 px-6 border-t border-pink-200">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
-        <!-- Brand -->
-        <div>
-            <h2 class="text-2xl font-bold text-pink-600">Delina Beauty</h2>
-            <p class="mt-3 text-sm text-gray-600 leading-relaxed">
-                Temukan skincare terbaik untuk kulit sehat, glowing, dan percaya diri ✨
-            </p>
+            <!-- Brand -->
+            <div>
+                <h2 class="text-2xl font-bold text-pink-600">Delina Beauty</h2>
+                <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+                    Temukan skincare terbaik untuk kulit sehat, glowing, dan percaya diri ✨
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3 text-gray-800">Menu</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-pink-500">Home</a></li>
+                    <li><a href="#" class="hover:text-pink-500">Produk</a></li>
+                    <li><a href="#" class="hover:text-pink-500">Tentang Kami</a></li>
+                    <li><a href="#" class="hover:text-pink-500">Kontak</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3 text-gray-800">Kontak</h3>
+                <ul class="text-sm space-y-2">
+                    <li>Email: <a href="mailto:delinabeauty@gmail.com" class="hover:text-pink-500">delinabeauty@gmail.com</a></li>
+                    <li>WhatsApp: <a href="#" class="hover:text-pink-500">0812-3456-7890</a></li>
+                    <li>Instagram: <a href="#" class="hover:text-pink-500">@delinabeauty.id</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div>
+                <h3 class="text-black font-semibold mb-4">Support</h3>
+                <ul class="space-y-2 text-black">
+                    <li><a href="#" class="hover:text-indigo-600">FAQ</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">Check Order</a></li>
+                    <li><a href="<?= $baseURL ?>index.php?page=testimoni" class="hover:text-indigo-600">Testimoni</a></li>
+                </ul>
+            </div>
+            
+            <!-- Company -->
+            <div>
+                <h3 class="text-black font-semibold mb-4">Company</h3>
+                <ul class="space-y-2 text-black">
+                    <li><a href="<?= $baseURL ?>index.php?page=about" class="hover:text-indigo-600">About</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">Carrier</a></li>
+                </ul>
+            </div>
         </div>
 
-        <!-- Quick Links -->
+        <!-- Legal -->
         <div>
-            <h3 class="text-lg font-semibold mb-3 text-gray-800">Menu</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="#" class="hover:text-pink-500">Home</a></li>
-                <li><a href="#" class="hover:text-pink-500">Produk</a></li>
-                <li><a href="#" class="hover:text-pink-500">Tentang Kami</a></li>
-                <li><a href="#" class="hover:text-pink-500">Kontak</a></li>
-            </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-            <h3 class="text-lg font-semibold mb-3 text-gray-800">Kontak</h3>
+            <h3 class="text-lg font-semibold mb-3 text-gray-800">Legal</h3>
             <ul class="text-sm space-y-2">
-                <li>Email: <a href="mailto:delinabeauty@gmail.com" class="hover:text-pink-500">delinabeauty@gmail.com</a></li>
-                <li>WhatsApp: <a href="#" class="hover:text-pink-500">0812-3456-7890</a></li>
-                <li>Instagram: <a href="#" class="hover:text-pink-500">@delinabeauty.id</a></li>
+                <li><a href="#" class="hover:text-indigo-600">Terms of service</a></li>
+                <li><a href="#" class="hover:text-indigo-600">Privacy policy</a></li>
+                <li><a href="#" class="hover:text-indigo-600">License</a></li>
             </ul>
         </div>
 
-    </div>
-
-    <!-- Bottom -->
-    <div class="border-t border-pink-200 mt-10 pt-5 text-center text-sm text-gray-600">
-        © 2025 Delina Beauty — Glow with Confidence ✨
-    </div>
-</footer>
-
-
-
-                <!-- Grid Links -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-10 w-full">
-
-                    <!-- Solutions -->
-                    <div>
-                        <h3 class="text-black font-semibold mb-2">Product Categories</h3>
-                        <ul class="space-y-2 text-black">
-                            <li><a href="#" class="hover:text-indigo-600">Face Wash</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">Toner</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">Serum</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">Moisturizer</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">Sunscreen</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Support -->
-                    <div>
-                        <h3 class="text-black font-semibold mb-4">Support</h3>
-                        <ul class="space-y-2 text-black">
-                            <li><a href="#" class="hover:text-indigo-600">FAQ</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">Check Order</a></li>
-                            <li><a href="<?= $baseURL ?>index.php?page=testimoni" class="hover:text-indigo-600">Testimoni</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Company -->
-                    <div>
-                        <h3 class="text-black font-semibold mb-4">Company</h3>
-                        <ul class="space-y-2 text-black">
-                            <li><a href="<?= $baseURL ?>index.php?page=about" class="hover:text-indigo-600">About</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">Carrier</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Legal -->
-                    <div>
-                        <h3 class="text-black font-semibold mb-4">Legal</h3>
-                        <ul class="space-y-2 text-black">
-                            <li><a href="#" class="hover:text-indigo-600">Terms of service</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">Privacy policy</a></li>
-                            <li><a href="#" class="hover:text-indigo-600">License</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="mt-10 pt-12 text-center text-black text-sm">
-                © 2025 Your Company. All rights reserved.
-            </div>
+        <!-- Bottom -->
+        <div class="border-t border-pink-200 mt-10 pt-5 text-center text-sm text-gray-600">
+            © 2025 Delina Beauty — Glow with Confidence ✨
         </div>
     </footer>
+
 
 
     <!-- SCRIPT DARI JAVASCRIPT -->

@@ -1,7 +1,11 @@
 <?php
-$koneksi = mysqli_connect("localhost", "root", "", "skincare_db");
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "skincare_db";
 
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
+$conn = new mysqli($host, $user, $pass, $db);
+
+if ($conn->connect_error) {
+    echo("Koneksi gagal: " . $conn->connect_error);
 }
-?>

@@ -3,7 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$baseURL= "/Glad2Glow/public/";
+$baseURL = "http://localhost/Glad2Glow/public/";
 ?>
 
 <!DOCTYPE html>

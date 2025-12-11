@@ -1,91 +1,44 @@
+<?php
+session_start();
+require '../config/database.php';
+
+if(isset($_POST['register'])){
+    $username = $_POST['username'];
+    $email    = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // hash password
+
+    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $username, $email, $password);
+
+    if($stmt->execute()){
+        echo "<p>Register berhasil! <a href='views/auth/login.php'>Login disini</a></p>";
+    } else {
+        echo "<p>Error: " . $stmt->error . "</p>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register Sekarang</title>
+<meta charset="UTF-8">
+<title>Register</title>
+<style>
+body { font-family: Arial; background: #f2f2f2; }
+form { background: #fff; padding: 20px; max-width: 400px; margin: 50px auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+input { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+button { padding: 10px; width: 100%; background: #4CAF50; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { background: #45a049; }
+</style>
 </head>
 <body>
-    <div class="register-container">
-        <h2>Buat Akun Baru</h2>
-
-        <?php if (isset($_SESSION['error'])): ?>
-            <p style="color: red;"><?= $_SESSION['error']; ?></p>
-            <?php unset ($_SESSION['error']); ?>
-        <?php endif; ?>
-
-        <?php if(isset($_SESSION['success'])): ?>
-            <p style="color: green;"><?= $_SESSION['success']; ?></p>
-            <?php unset($_SESSION['success']); ?>
-        <?php endif; ?>
-        
-        <form action="<?= $baseURL ?>actions/register.php" method="POST">
-            <input type="text" name="name" placeholder="Nama Lengkap" required>
-            <input type="email" name="Email" placeholder="Email Anda" required>
-            <input type="password" name="password" placeholder="Kata Sandi Anda" required>
-            <input type="password" name="password2" placeholder="Ulangi Kata Sandi" required>
-            <button type="submit"> Daftar Sekarang</button>
-        </form>
-
-        <p>Sudah Punya Akun
-            <a href="<?= $baseURL ?>page=login"> Masuk di sini</a>
-        </p>
-    </div>
-
-    <style>
-        body {
-            font-family: 'Poppins',sans-serif;
-            background-color: #FADADD;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .register-container{
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 2px 10px rgb(0 0 0 /10);
-            text-align: center;
-            width: 320px;
-        }
-        .register-container h2{
-            margin-bottom: 20px;
-            color: #FADADD;
-        }
-        .register-container input{
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-        }
-        .register-container button{
-            width: 100%;
-            background-color: #E758B8;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .register-container button:hover{
-            background-color: #E758B8;
-        }
-        .register-container p{
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 15px;
-        }
-        .register-container a{
-            color: #E758B8;
-            font-weight: bold;
-            text-decoration: none;
-        }
-    </style>
+<h2 style="text-align:center;">Register</h2>
+<form method="POST" action="">
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit" name="register">Register</button>
+</form>
 </body>
 </html>

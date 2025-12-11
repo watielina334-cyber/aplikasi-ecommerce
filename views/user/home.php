@@ -180,11 +180,48 @@ $baseURL= "/Glad2Glow/public/";
         </div>
     </section>
 
-    <!-- INI KOMPONEN FOOTER -->
+    <!-- FOOTER DELINA BEAUTY -->
+    <footer class="bg-pink-100 text-gray-700 mt-12 py-10 px-6 border-t border-pink-200">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
-    <footer class="bg-pink-350 border-t cursor-pointer">
-        <div class="max-w-5x1 mx-auto px-5 py-8">
-            <div class="flex flex-col md:flex-row md:justify-between gap-10">
+        <!-- Brand -->
+        <div>
+            <h2 class="text-2xl font-bold text-pink-600">Delina Beauty</h2>
+            <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+                Temukan skincare terbaik untuk kulit sehat, glowing, dan percaya diri ✨
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3 text-gray-800">Menu</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-pink-500">Home</a></li>
+                <li><a href="#" class="hover:text-pink-500">Produk</a></li>
+                <li><a href="#" class="hover:text-pink-500">Tentang Kami</a></li>
+                <li><a href="#" class="hover:text-pink-500">Kontak</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3 text-gray-800">Kontak</h3>
+            <ul class="text-sm space-y-2">
+                <li>Email: <a href="mailto:delinabeauty@gmail.com" class="hover:text-pink-500">delinabeauty@gmail.com</a></li>
+                <li>WhatsApp: <a href="#" class="hover:text-pink-500">0812-3456-7890</a></li>
+                <li>Instagram: <a href="#" class="hover:text-pink-500">@delinabeauty.id</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-pink-200 mt-10 pt-5 text-center text-sm text-gray-600">
+        © 2025 Delina Beauty — Glow with Confidence ✨
+    </div>
+</footer>
+
+
 
                 <!-- Grid Links -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-10 w-full">

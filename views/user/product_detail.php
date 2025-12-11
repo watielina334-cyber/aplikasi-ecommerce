@@ -1,53 +1,31 @@
-<?php 
-include 'data/product_data.php';
-$id = $_GET['id'] ?? 0;
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?= $products['name'] ?></title>
+</head>
+<body>
 
-$product = null;
+    <div style="max-width: 800px; margin: auto; padding: 20px;">
 
-foreach ($product_data as $p) {
-    if ($p['id'] == $id) {
-        $product = $p;
-        break;
-    }
-};
+        <h1><?= $products['name'] ?></h1>
 
-if ($product == null) {
-    echo "<h2 style='text-alien: center; margin-top: 50px;'>produk tidak ditemukan </h2>";
-    exit;
-}
-?>
+        <img src="public/images/<?= $products['image'] ?>"
+             style="width: 100%; max-height: 350px; object-fit: cover; border-radius: 10px;">
 
-<div class="max-w-4xl mx-auto p-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <h3 style="margin-top: 20px; color: #ff4b8a">
+            Rp <?= number_format($products['price'], 0, ',', '.') ?>
+        </h3>
 
-        <!-- GAMBAR PRODUK -->
-        <img src="<?= $product['img'] ?>" class="rounded-xl shadow-md">
+        <p style="margin-top: 15px; line-height: 1.6; font-size: 16px;">
+            <?= nl2br($products['description']) ?>
+        </p>
 
-        <!-- DETAIL PRODUK -->
-        <div>
-            <h2 class="text-3xl font-bold text-pink-600"><?= $product['nama'] ?></h2>
-
-            <p class="text-xl mt-2 font-semibold">
-                Rp <?= number_format($product['harga'], 0, ',', '.') ?>
-            </p>
-
-            <p class="mt-3 text-gray-600">
-                Produk skincare Glad2Glow yang diformulasikan untuk memberikan kulit sehat, glowing, dan lembap.
-            </p>
-
-            <!-- VARIAN -->
-            <label class="block mt-4 mb-1 text-gray-700 font-medium">Pilih Varian</label>
-            <select class="w-full p-3 border rounded-lg">
-                <?php foreach ($product['varian'] as $v): ?>
-                    <option><?= $v ?></option>
-                <?php endforeach; ?>
-            </select>
-
-            <!-- TOMBOL BELI -->
-            <button class="mt-6 w-full bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-lg shadow-lg">
-                Tambah ke Keranjang
-            </button>
-        </div>
+        <a href="index.php?page=products" 
+           style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #ff4b8a; color:white; border-radius: 6px;">
+            Kembali
+        </a>
 
     </div>
-</div>
+
+</body>
+</html>

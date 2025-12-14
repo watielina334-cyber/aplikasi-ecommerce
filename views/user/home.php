@@ -3,7 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$baseURL = "http://localhost/Glad2Glow/public/";
+$baseURL = "http://localhost/delina_beauty/aplikasi-ecommerce/public/";
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ $baseURL = "http://localhost/Glad2Glow/public/";
     <div class="hidden lg:flex lg:space-x-20">
       <a href="<?= $baseURL ?>index.php?page=home" class="text-gray-900 hover:text-pink-500 font-medium">Home</a>
       <a href="<?= $baseURL ?>index.php?page=about" class="text-gray-900 hover:text-pink-500 font-medium">About</a>
-      <a href="<?= $baseURL ?>index.php?page=product" class="text-gray-900 hover:text-pink-500 font-medium">Product</a>
+      <a href="<?= $baseURL ?>index.php?page=products" class="text-gray-900 hover:text-pink-500 font-medium">Product</a>
       <a href="<?= $baseURL ?>index.php?page=contact" class="text-gray-900 hover:text-pink-500 font-medium">Contact</a>
     </div>
 
@@ -67,7 +67,7 @@ $baseURL = "http://localhost/Glad2Glow/public/";
   <div class="space-y-4">
     <a href="<?= $baseURL ?>index.php?page=home" class="block text-lg font-medium">Home</a>
     <a href="<?= $baseURL ?>index.php?page=about" class="block text-lg font-medium">About</a>
-    <a href="<?= $baseURL ?>index.php?page=product" class="block text-lg font-medium">Product</a>
+    <a href="<?= $baseURL ?>index.php?page=products" class="block text-lg font-medium">Product</a>
     <a href="<?= $baseURL ?>index.php?page=contact" class="block text-lg font-medium">Contact</a>
   </div>
 
@@ -86,7 +86,7 @@ $baseURL = "http://localhost/Glad2Glow/public/";
     <p class="mt-4 text-lg md:text-xl">Wujudkan Kulit Cerah Impianmu</p>
 
     <div class="mt-8">
-      <a href="<?= $baseURL ?>index.php?page=product" class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold shadow">Temukan Sekarang →</a>
+      <a href="<?= $baseURL ?>index.php?page=products" class="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold shadow">Temukan Sekarang →</a>
     </div>
   </div>
 </div>
@@ -108,24 +108,24 @@ $baseURL = "http://localhost/Glad2Glow/public/";
             <div class="mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-20 lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 <a href="#" class="group">
-                    <img src= "../public/images/produk5.jfif" class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
+                    <img src= "../public/images/moisturizer_pomegranate.jpeg" class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
                     <h3 class="mt-4 text-sm text-gray-700">Glad2Glow Pomegranate 5% Niacinamide Brightening Moisturizer </h3>
                     <p class="mt-1 text-lg font-medium text-gray-900">Rp 32.000</p>
                 </a>
                 <a href="#" class="group">
-                    <img src="../public/images/produk7.jfif" alt=" " class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
+                    <img src="../public/images/cleanser_bluberry.jpeg" alt=" " class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
                     <h3 class="mt-4 text-sm text-gray-700">Glad2Glow Blueberry Ceramide Low pH Gel Cleanser</h3>
                     <p class="mt-1 text-lg font-medium text-gray-900">Rp 39.000</p>
                 </a>
                 <a href="#" class="group">
-                    <img src="../public/images/amino-acids.jpg" alt=" " class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
+                    <img src="../public/images/cleanser_amino.jpg" alt=" " class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
                     <h3 class="mt-4 text-sm text-gray-700">Glad2Glow Milk Amino Acids Gentle Cleanser 80g</h3>
                     <p class="mt-1 text-lg font-medium text-gray-900">Rp 40.120</p>
                 </a>
                 <a href="#" class="group">
-                    <img src="../public/images/produk6.jfif" alt=" " class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
-                    <h3 class="mt-4 text-sm text-gray-700">Glad2Glow Double Briht Day Cream Moisturizer Cream Pemutih Wajah</h3>
-                    <p class="mt-1 text-lg font-medium text-gray-900">Rp 60.560</p>
+                    <img src="../public/images/peeling.jpeg" alt=" " class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-7/8" />
+                    <h3 class="mt-4 text-sm text-gray-700">Glad2Glow Peeling Solution AHA BHA PHA Intensive</h3>
+                    <p class="mt-1 text-lg font-medium text-gray-900">Rp 40.560</p>
                 </a>
                 </a>
             </div>
@@ -196,10 +196,8 @@ $baseURL = "http://localhost/Glad2Glow/public/";
             <div>
                 <h3 class="text-lg font-semibold mb-3 text-gray-800">Menu</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-pink-500">Home</a></li>
-                    <li><a href="#" class="hover:text-pink-500">Produk</a></li>
-                    <li><a href="#" class="hover:text-pink-500">Tentang Kami</a></li>
-                    <li><a href="#" class="hover:text-pink-500">Kontak</a></li>
+                    <li><a href="<?= $baseURL ?>index.php?page=home" class="hover:text-pink-500">Home</a></li>
+                    <li><a href="<?= $baseURL ?>index.php?page=products" class="hover:text-pink-500">Produk</a></li>
                 </ul>
             </div>
 
@@ -208,7 +206,7 @@ $baseURL = "http://localhost/Glad2Glow/public/";
                 <h3 class="text-lg font-semibold mb-3 text-gray-800">Kontak</h3>
                 <ul class="text-sm space-y-2">
                     <li>Email: <a href="mailto:delinabeauty@gmail.com" class="hover:text-pink-500">delinabeauty@gmail.com</a></li>
-                    <li>WhatsApp: <a href="#" class="hover:text-pink-500">0812-3456-7890</a></li>
+                    <li>WhatsApp: <a href="#" class="hover:text-pink-500">0823-7855-9918</a></li>
                     <li>Instagram: <a href="#" class="hover:text-pink-500">@delinabeauty.id</a></li>
                 </ul>
             </div>
@@ -231,16 +229,16 @@ $baseURL = "http://localhost/Glad2Glow/public/";
                     <li><a href="#" class="hover:text-indigo-600">Carrier</a></li>
                 </ul>
             </div>
-        </div>
-
-        <!-- Legal -->
-        <div>
-            <h3 class="text-lg font-semibold mb-3 text-gray-800">Legal</h3>
-            <ul class="text-sm space-y-2">
-                <li><a href="#" class="hover:text-indigo-600">Terms of service</a></li>
-                <li><a href="#" class="hover:text-indigo-600">Privacy policy</a></li>
-                <li><a href="#" class="hover:text-indigo-600">License</a></li>
-            </ul>
+            
+            <!-- Legal -->
+            <div>
+                <h3 class="text-lg font-semibold mb-3 text-gray-800">Legal</h3>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#" class="hover:text-indigo-600">Terms of service</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">Privacy policy</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">License</a></li>
+                </ul>
+            </div>
         </div>
 
         <!-- Bottom -->

@@ -3,6 +3,7 @@ session_start();
 
 // ambil parameter "page" dari url;
 $page = $_GET['page'] ?? 'home';
+$kategori_id = $_GET['kategori_id'] ?? '';
 
 switch ($page) {
 
@@ -15,7 +16,7 @@ switch ($page) {
         require '../views/user/about.php';
         break;
 
-    case 'product':
+    case 'products':
         require '../views/user/product.php';
         break;
 

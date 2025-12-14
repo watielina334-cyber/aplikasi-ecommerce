@@ -20,7 +20,7 @@ if(!$products) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?= $products['name'] ?></title>
     <style>
         body {
            font-family: Arial, Helvetica, sans-serif;
@@ -68,6 +68,19 @@ if(!$products) {
         .btn:hover{
             background: #e63a73;
         }
+        .btn-buy {
+            flex: 1;
+            padding: 14px;
+            background: white;
+            color: #ff5722;
+            border: 2px solid #ff5722;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .btn-buy:hover {
+            background: #fff0eb;
+        }
     </style>
 </head>
 <body>
@@ -86,6 +99,9 @@ if(!$products) {
             <div class="desc">
                 <?= nl2br($products['description']) ?>
             </div>
+            <div class="stok">
+                Stok tersedia: <strong><?= $products['stock'] ?></strong>
+            </div>
 
             <a href="index.php?page=products" class="btn">
                 🔙Kembali ke Produk
@@ -97,10 +113,13 @@ if(!$products) {
     <form method= "POST" action="index.php?page=cart">
         <input type="hidden" name="id" value="<?= $producst['id'] ?>">
         <label>Jumlah:</label>
-        <input type="number" name="qty" value="1" min="1" class="border p-2 w-20">
+        <input type="number" name="qty" value="1" min="1" max="<?= $products['stock'] ?>" class="border p-2 w-20">
         <button type="submit" name="add_to_cart" style="display: block; margin-top: 15px; padding:12px; background:#ff4b8a; color:white; border-radius: 8px;">
             🛒Tambah ke Keranjang
-        </button>
+        </button> 
+        <button type="submit" name="buy_now" class="btn-buy">
+            Beli Sekarang
+        </button> 
     </form>
 </body>
 </html>

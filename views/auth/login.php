@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,18 +23,22 @@ button {
     background: blue;
     color: white;
 }
+p {
+    cursor: pointer;
+}
 </style>
 </head>
 <body>
 
 <div class="form-box">
     <h3>Login</h3>
-    <form action="views/auth/login_proses.php" method="POST">
-        <input type="text" name="username" placeholder="Username" required>
+    <form action="../views/auth/login_proses.php" method="POST">
+        <input type="email" name="email" placeholder="Email anda" required>
+        <input type="name" name="name" placeholder="Nama anda" required>
         <input type="password" name="password" placeholder="Password" required>
         <button>Login</button>
     </form>
-    <p><a href="views/auth/register.php"></a>Belum Punya Akun? Register</p>
+    <p><a href="../views/auth/register.php"></a>Belum Punya Akun? Register</p>
 </div>
 
 </body>

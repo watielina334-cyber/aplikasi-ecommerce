@@ -7,7 +7,7 @@ $name =trim($_POST['name']);
 $email =trim($_POST['email']);
 $password =trim($_POST['password']);
 $password2 =trim($_POST['password2']);
-
+$role = 'admin';
 
 // validasi input kosong
 if (empty($name) || empty($email) || empty($password) || empty($password2)){
@@ -15,13 +15,11 @@ if (empty($name) || empty($email) || empty($password) || empty($password2)){
     header("location: " . $baseURL . "index.php?page=home.php");
     exit;
 }
-
 // VALIDASI PASSWORD SAMA
 if ($password !== $password2) {
     $_SESSION['error'] = "Password tidak sama!";
     exit;
 }
-
 // cek apakah email sudah terdaftar
 $stmt = $conn ->prepare("select id from users where email = ?");
 $stmt -> bind_param("s", $email);
@@ -33,24 +31,21 @@ if ($result -> num_rows > 0){
     header("location: ../index.php?page=register");
     exit;
 }
-
 // hash password
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 // insert user baru
-$stmt  = $koneksi -> prepare(
-    "INSERT INTO users (name, email, password, created_at)
-    VALUES (?, ?, ?, NOW())"
-);
-$stmt -> bind_param("sss", $name, $email, $hashedPassword);
+$stmt = $conn->prepare(
+    "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $name, $email, $password_hash, $role);
 
-if ($stmt -> execute()) {
-    $_SESSION['success'] = "Registrasi berhasil! silahkan login. ";
-    header("location: ../index.php?page=login");
+if ($stmt->execute()) {
+    $_SESSION['success'] = "registrasi berhasil, silahkan login";
+    header("location: ../../index.php?page=login");
     exit;
 } else {
-    $_SESSION['error'] = "Terjadi kesalahan saat registrasi!";
-    header("location: ../index.php?page=register");
+    $_SESSION['error'] = "registrasi gagal";
+    header("location: ../../index.php?page=register");
     exit;
 }
 ?>

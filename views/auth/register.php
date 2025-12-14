@@ -3,13 +3,13 @@ session_start();
 require '../config/database.php';
 
 if(isset($_POST['register'])){
-    $username = $_POST['username'];
+    $name = $_POST['name'];
     $email    = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // hash password
 
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $username, $email, $password);
+    $stmt->bind_param("sss", $name, $email, $password);
 
     if($stmt->execute()){
         echo "<p>Register berhasil! <a href='views/auth/login.php'>Login disini</a></p>";
@@ -35,7 +35,7 @@ button:hover { background: #45a049; }
 <body>
 <h2 style="text-align:center;">Register</h2>
 <form method="POST" action="">
-    <input type="text" name="username" placeholder="Username" required>
+    <input type="text" name="name" placeholder="Username" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Password" required>
     <button type="submit" name="register">Register</button>

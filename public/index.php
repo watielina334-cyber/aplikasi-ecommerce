@@ -53,7 +53,7 @@ switch ($page) {
         
     // user admin
             
-    case 'admin':
+    case 'dashboard':
         require '../views/admin/dashboard.php';
         break;
         
